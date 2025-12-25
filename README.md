@@ -1,37 +1,35 @@
 # ml-inference-web-app
-Machine learning inference web app built with Java and Python.
+A simple inference web application built with Java and Python.
 
 ## Overview
-This project is a machine learning inference web application built with Java and Python.
-
-Javaでユーザー入力と結果表示を担当し、
-Python(FastAPI)で前処理・機械学習推論・結果保存を行います。
+This project is a personal learning project focused on building a simple web application where a Java client communicates with a Python-based inference service.
+JavaとPythonを組み合わせたWebアプリケーション構成を学ぶための個人開発プロジェクトです。
 
 ## Tech Stack
 - Java (Frontend / UI)
 - Python (Backend / ML inference)
+- REST API
+- Git / GitHub
+
+## Planned (Future Work)
 - FastAPI
 - scikit-learn
-- SQLLite
-- REST API
+- SQLite
 
 ## System Architecture
-- Java : User interface and request handling
-  →ユーザー入力・リクエスト制御を担当
-- Python : Data preprocessing and ML inference
-  →前処理および機械学習の推論処理
-- DB : Persistence of inference results
-  →推論結果の保存
+- Java : ユーザー入力、画面表示、Python APIへのリクエスト送信を担当
+- Python : データ処理、推論ロジックを担当(初期は簡易処理)
+- DB : 推論結果の保存(予定)
 
-## Processing Flow
+## Processing Flow (Planned)
 1. User inputs data via the Java UI
    →ユーザーがJava UIからデータを入力
 2. Java sends a request to the Python REST API
    →JavaがPython REST APIにリクエストを送信
 3. Python validates and preprocesses the input data
    →Python側で入力データを検証・前処理
-4. The trained ML model performs inference
-   →学習済みMLモデルで推論を実行
+4. Inference is performed(initially simple logic, later a trained ML model)
+   →初期は簡易ロジックで推論し、将来的に学習済みMLモデルを使用
 5. The inference result is stored in the database
     →推論結果をデータベースに保存
 6. The result is returned to the Java UI and displayed to the user
