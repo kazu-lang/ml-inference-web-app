@@ -5,6 +5,11 @@ A simple inference web application built with Java and Python.
 This project is a personal learning project focused on building a simple web application where a Java client communicates with a Python-based inference service.
 JavaとPythonを組み合わせたWebアプリケーション構成を学ぶための個人開発プロジェクトです。
 
+## Current Status
+- FastAPI-based inference endpoint implemented
+- Endpoint: POST /infer
+- Simple inference logic (x * 2) for initial validation
+
 ## Tech Stack
 - Java (Frontend / UI)
 - Python (Backend / ML inference)
