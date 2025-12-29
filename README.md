@@ -9,6 +9,7 @@ JavaとPythonを組み合わせたWebアプリケーション構成を学ぶた�
 - FastAPI-based inference endpoint implemented
 - Endpoint: POST /infer
 - Simple inference logic (x * 2) for initial validation
+- Business logic separated into a dedicated module (logic.py)
 
 ## Tech Stack
 - Java (Frontend / UI)
