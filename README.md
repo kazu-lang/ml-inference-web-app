@@ -10,6 +10,7 @@ JavaとPythonを組み合わせたWebアプリケーション構成を学ぶた�
 - Endpoint: POST /infer
 - Simple inference logic (x * 2) for initial validation
 - Business logic separated into a dedicated module (logic.py)
+- Request/Response schemas defined using Pydantic models
 
 ## Tech Stack
 - Java (Frontend / UI)
