@@ -2,7 +2,8 @@
 A simple inference web application built with Java and Python.
 
 ## Overview
-This project is a personal learning project focused on building a simple web application where a Java client communicates with a Python-based inference service.
+This project is a minimal FastAPI application that provides a simple inference API.
+It is intended as a baseline implementation focusing on clear separation between API, schema, and business logic layers.
 JavaとPythonを組み合わせたWebアプリケーション構成を学ぶための個人開発プロジェクトです。
 
 ## Current Status
@@ -11,12 +12,43 @@ JavaとPythonを組み合わせたWebアプリケーション構成を学ぶた�
 - Simple inference logic (x * 2) for initial validation
 - Business logic separated into a dedicated module (logic.py)
 - Request/Response schemas defined using Pydantic models
+- Unified API response format and basic error handling implemented
 
 ## Tech Stack
 - Java (Frontend / UI)
 - Python (Backend / ML inference)
 - REST API
 - Git / GitHub
+
+## Architecture
+
+The project is structured to clearly separate responsibilities:
+
+- 'main.py'
+   - FastAPI application and endpoint definitions
+   - Request validation and HTTP-level error handling
+- 'models.py'
+   - Pydantic models for request and response schemas
+- 'inference.py'
+   - Pure business logic without any FastAPI or Pydantic dependencies
+
+## API Endpoint
+### POST /infer
+- Request:
+'''json
+{
+   "x":10
+}
+- Response:
+'''json
+{
+   "status": "OK",
+   "data": {
+      "result": 20
+   }
+}
+- validation:
+   x must be a non-negative integer
 
 ## Planned (Future Work)
 - FastAPI
