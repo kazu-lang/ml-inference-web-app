@@ -14,6 +14,25 @@ JavaとPythonを組み合わせたWebアプリケーション構成を学ぶた�
 - Request/Response schemas defined using Pydantic models
 - Unified API response format and basic error handling implemented
 
+## Hoe to Run (Local)
+### Requirements
+- Python 3.10+
+- pip
+
+### Setup
+```bash
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+### Runapp
+uvicorn main:app --reload
+
+## Design Policy
+- Keep business logic independent from FastAPI framework
+- Use Pydantic models only for API boundary
+- Make the project easy to extend to real ML models
+
 ## Tech Stack
 - Java (Frontend / UI)
 - Python (Backend / ML inference)
@@ -32,15 +51,23 @@ The project is structured to clearly separate responsibilities:
 - 'inference.py'
    - Pure business logic without any FastAPI or Pydantic dependencies
 
+## Directory Structure
+.
+├── main.py # FastAPI entry point
+├── models.py # Request / Response schemas
+├── inference.py # Business logic
+├── requirements.txt
+└── README.md
+
 ## API Endpoint
 ### POST /infer
 - Request:
-'''json
+```json
 {
    "x":10
 }
 - Response:
-'''json
+```json
 {
    "status": "OK",
    "data": {
@@ -49,6 +76,11 @@ The project is structured to clearly separate responsibilities:
 }
 - validation:
    x must be a non-negative integer
+
+## Current Limitations
+- No authentication or authorization
+- No persistent storage
+- Inference logic is intentionally simple
 
 ## Planned (Future Work)
 - FastAPI
